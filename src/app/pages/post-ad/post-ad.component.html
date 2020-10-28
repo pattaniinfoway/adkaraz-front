@@ -1,0 +1,135 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="section-headline-wrap">
+	<div class="section-headline">
+		<h2>Post Your Ad</h2>
+		<p>Home<span class="separator">/</span><span class="current-section">Post Your Ad</span></p>
+	</div>
+</div>
+<div class="container mb-3">
+    	<div class="card">
+		  <div class="card-body">
+		  	<h3 class="mb-3">POST YOUR AD</h3>
+		  	<div class="row">
+		  		<div class="col-md-2"></div>
+		  		<div class="col-md-8">
+		  			<label>Category</label>
+		  			<select class="form-control">
+		  				<option>Select Category</option>
+		  			</select>
+		  		</div>
+		  	</div>
+		  	<div class="row mt-3">
+		  		<div class="col-md-2"></div>
+		  		<div class="col-md-8">
+		  			<label>Title</label>
+		  			<input type="text" class="form-control" placeholder="Title" />
+		  		</div>
+		  	</div>
+		  	<div class="row mt-3">
+		  		<div class="col-md-2"></div>
+		  		<div class="col-md-8">
+		  			<label>Description</label>
+		  			<textarea class="form-control" rows="5" placeholder="Description"></textarea>
+		  		</div> 
+		  	</div>	
+		  	<div class="row mt-3">
+		  		<div class="col-md-2"></div>
+		  		<div class="col-md-8">
+		  			<label>Price</label>
+		  			<input type="text" class="form-control" placeholder="Price" />
+		  		</div> 
+		  	</div>
+		  	<div class="row mt-3">
+		  		<div class="col-md-2"></div>
+		  		<div class="col-md-8">
+		  			<label>Select Image</label><Br>
+		  			<button type="button" class="btn btn-primary" (click)="fileInput.click()">Choose File</button>
+		  			<input  hidden (change)="uploadFile($event)" #fileInput type="file">
+		  			 <img class="ml-3" [src]="thumb" height="50" width="50" *ngIf="thumb">
+		  		</div> 
+		  	</div>
+		  	<!-- 		  			<div class="uploadfilecontainer" (click)="fileInput2.click()" appDragDrop (onFileDropped)="uploadFile2($event)">
+              			<input multiple  hidden type="file" #fileInput2 (change)="uploadFile2($event)">
+            		</div> -->
+<!--             		<div  class="files-list" *ngFor="let file of files;let i= index">
+					    <p> {{ file }} </p>
+					    <button type="button" class="delete-file" >
+					      <img src="assets/images/Recycle_Bin_Full.png">
+		                </button>
+					</div> -->
+         	<div class="row mt-3">
+		  		<div class="col-md-2"></div>
+		  		<div class="col-md-8">
+		  			<!-- <div  class="files-list" *ngFor="let file of urls2;let i= index">
+					    <img  class="ml-3" [src]="file" height="50" width="50" *ngIf="file">
+					    <button type="button" class="delete-file" >
+					      <img src="assets/images/Recycle_Bin_Full.png">
+		                </button>
+					</div> -->
+		  			<div class="box-image" >
+		  				<div *ngIf="urls2[0]">
+		  					<a class="close-btn" href="javascript:void(0);" (click)="deleteAttachment(0)"><i class="fa fa-times"></i></a>
+		  					<img  style="height:100px;width:100px;"  src="{{urls2[0]}}" />
+		  				</div>
+		  				<div class="box-icon" (click)="fileInput2.click()" [hidden]="urls2[0]"><i style="font-size:24px;color: #002f34;" class="fa fa-camera text-center" aria-hidden="true"></i>
+		  				<div class="box-text"><span>Add Photo</span></div>
+		  				</div>
+		  			</div>
+		  			<div class="box-image" >
+		  				<div *ngIf="urls2[1]">
+		  					<a class="close-btn" href="javascript:void(0);" (click)="deleteAttachment(1)"><i class="fa fa-times"></i></a>
+		  					<img style="height:100px;width:100px;"  src="{{urls2[1]}}">
+		  				</div>
+		  				<div class="box-icon" (click)="fileInput2.click()" [hidden]="urls2[1]"><i style="font-size:24px;color: #002f34;" class="fa fa-camera text-center" aria-hidden="true"></i>
+		  				<div class="box-text"><span>Add Photo</span></div>
+		  				</div>
+		  			</div>
+		  			<div class="box-image" >
+		  				<div *ngIf="urls2[2]">
+		  					<a class="close-btn" href="javascript:void(0);" (click)="deleteAttachment(2)"><i class="fa fa-times"></i></a>
+		  					<img style="height:100px;width:100px;"  src="{{urls2[2]}}">
+		  				</div>
+		  				<div class="box-icon" (click)="fileInput2.click()" [hidden]="urls2[2]"><i style="font-size:24px;color: #002f34;" class="fa fa-camera text-center" aria-hidden="true"></i>
+		  				<div class="box-text"><span>Add Photo</span></div>
+		  				</div>
+		  			</div>
+		  			<div class="box-image" >
+		  				<div *ngIf="urls2[3]">
+		  					<a class="close-btn" href="javascript:void(0);" (click)="deleteAttachment(3)"><i class="fa fa-times"></i></a>
+		  					<img style="height:100px;width:100px;"  src="{{urls2[3]}}">
+		  				</div>
+		  				<div class="box-icon" (click)="fileInput2.click()" [hidden]="urls2[3]"><i style="font-size:24px;color: #002f34;" class="fa fa-camera text-center" aria-hidden="true"></i>
+		  				<div class="box-text"><span>Add Photo</span></div>
+		  				</div>
+		  			</div>
+		  			<div class="box-image" >
+		  				<div *ngIf="urls2[4]">
+		  					<a class="close-btn" href="javascript:void(0);" (click)="deleteAttachment(4)"><i class="fa fa-times"></i></a>
+		  					<img style="height:100px;width:100px;"  src="{{urls2[4]}}">
+		  				</div>
+		  				<div class="box-icon" (click)="fileInput2.click()" [hidden]="urls2[4]"><i style="font-size:24px;color: #002f34;" class="fa fa-camera text-center" aria-hidden="true"></i>
+		  				<div class="box-text"><span>Add Photo</span></div>
+		  				</div>
+		  			</div>		  					  				  			
+		  			<input multiple  hidden type="file" #fileInput2 (change)="uploadFile2($event)" accept="image/*ngIf=">
+            		
+		  		</div> 
+		  	</div>
+			
+                        
+	
+
+		  	<div class="row mt-3">
+		  		<div class="col-md-2"></div>
+		  		<div class="col-md-8">
+		  			<button class="btn btn-dark">Post now</button>
+		  		</div> 
+		  	</div>
+
+		  </div>
+		</div>
+</div>
+<app-footer></app-footer>

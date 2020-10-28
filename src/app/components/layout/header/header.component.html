@@ -1,0 +1,21 @@
+<!-- HEADER -->
+<div class="header-wrap">
+	<header>
+		<div class="header-language">
+			<select (change)="switchLang($event)">
+				<option value="en">English</option>
+				<option value="ar">Arabic</option>
+			</select>	
+		</div>			
+		<!-- USER BOARD -->
+		<div class="user-board">
+				<div class="account-actions">
+					<a href="#" class="button" routerLink="/login">Login</a>
+					<a href="#" class="button" routerLink="/signup">Register</a>
+					<a  style="margin-top:-5px;font-weight: bold;" href="#" class="btn btn-dark" routerLink="/post-ad"><i style="font-size:14px;" class="fa fa-plus"></i>&nbsp;Post Ad</a>
+				</div>
+		</div>
+		<!-- /USER BOARD -->
+	</header>
+</div>
+<!-- /HEADER -->

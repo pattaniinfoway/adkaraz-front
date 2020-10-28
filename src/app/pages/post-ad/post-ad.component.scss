@@ -1,0 +1,73 @@
+.uploadfilecontainer {
+    background-image: url("../../../assets/images/cloud-2044823_960_720.png");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+    height: 200px;
+    width: 100%;
+    // margin: 20px auto;
+    border: 2px dashed #8779A4;
+    border-radius: 10px;
+}
+
+.uploadfilecontainer:hover {
+    cursor: pointer;
+    background-color: #9ecbec !important;
+    opacity: 0.8;
+}
+
+.files-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top:15px;
+    background: #ffffff;
+    border: 1px dashed;
+    border-radius: 12px;
+    padding: 5px;
+    color: #8779A4;
+}
+
+.files-list .delete-file {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.files-list .delete-file img {
+    width: 30px;
+}
+.box-image{
+    border: 2px solid #9dadb6;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 104px;
+    vertical-align: top;
+    margin: 0 6px 6px 0;
+    width: 104px;
+}
+.box-icon{
+    align-items: center;
+    cursor: pointer;
+    color: #9dadb6;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+.box-text{
+    color: #002f34;
+    font-size: 14px;
+    text-transform: capitalize;
+    text-align: center;
+}
+.close-btn{
+    // right: 0;
+    z-index: 1;
+    top: 2px;
+    position: absolute;
+    background-color: rgba(0,47,52,.64);
+    color: #fff;
+    padding:5px;
+}

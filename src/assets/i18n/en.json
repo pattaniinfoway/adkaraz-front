@@ -1,0 +1,9 @@
+{	
+	"HEADER": {
+		"HOME":"Home",
+		"ABOUT": "About Us",
+		"AUTH": "Authorized Seller",
+		"PACKAGE": "Packages",
+		"CONTACT": "Contact"
+	}
+}
